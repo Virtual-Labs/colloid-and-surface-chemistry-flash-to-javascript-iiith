@@ -1,0 +1,385 @@
+body{
+    margin: 0 auto;
+    padding: 0;
+    overflow: hidden;
+ }
+
+.container{
+    width:1080px; 
+    height:715px; 
+    position: relative;
+}
+
+h3{  
+    text-align: center;
+    font-weight: bold;
+    font-family: "Times New Roman", Times, serif;
+}
+
+#reset_btn{
+    margin: auto;
+    display: block;
+    cursor: pointer;
+}
+
+#background{
+	margin: auto;
+	display: block;
+	width: 80%;
+}
+
+#agarose_sol{
+	position: absolute;
+	top: 2%;
+	left: 21%;
+	width: 3.5%;
+	cursor: pointer;
+}
+
+#beaker{
+	position: absolute;
+	top:2%;
+	left:29%;
+	height: 15%;
+	z-index: 2;
+	cursor: pointer;
+	-webkit-transition: transform 1s; /* Safari */
+    transition: transform 1s;
+}
+
+#gel_mold{
+	position: absolute;
+	top:7%;
+	left:40%;
+	width: 7%;
+	cursor: pointer;
+}
+
+#watch_glass{
+	position: absolute;
+	top:7%;
+	left:51%;
+	width:5.7%;
+	z-index: 3;
+	cursor: pointer;
+	-webkit-transition: transform 1s; /* Safari */
+    transition: transform 1s;
+}
+
+#buffer_sol{
+	position: absolute;
+	top:3%;
+	left:64%;
+	width: 3%;
+	cursor: pointer;
+}
+
+#thermometer{
+	position: absolute;
+	top:1%;
+	left:76%;
+	width:1.7%;
+	z-index: 1;
+	cursor: pointer;
+	-ms-transform: rotate(10deg); /* IE 9 */
+    -webkit-transform: rotate(10deg); /* Chrome, Safari, Opera */
+    transform: rotate(10deg);
+}
+
+#instruction_box1{
+	position: absolute;
+	top:39%;
+	left:27%;
+	visibility: hidden;
+}
+
+#circle{
+	position: absolute;
+	top:37%;
+	left:35%;
+	width:10%;
+	visibility: hidden;
+}
+
+#hand{
+	position: absolute;
+	top:49%;
+	left:24%;
+	width:9%;
+	z-index: 3;
+	visibility: hidden;
+}
+
+#spoon{
+	position: absolute;
+	left:29%;
+	top: 47.5%;
+	width: 1.5%;
+	cursor: pointer;
+	-ms-transform: rotate(26deg); /* IE 9 */
+    -webkit-transform: rotate(26deg); /* Chrome, Safari, Opera */
+    transform: rotate(26deg);
+    visibility: hidden;
+}
+
+#agaroseSol_cap{
+	position: absolute;
+	width: 3%;
+	top:62.9%;
+	left:28.2%;
+	visibility: hidden;
+}
+
+#open_agaroseSol_bottle{
+	position: absolute;
+	width: 3.4%;
+	top: 63%;
+	left: 28%;
+	z-index: 2;
+	visibility: hidden;
+}
+
+#bufferbottle_cap{
+	position: absolute;
+	width:1.7%;
+	top:63.4%;
+	left:29.5%;
+	visibility: hidden;
+}
+
+#openbuffer_bottle{
+	position: absolute;
+	width: 3%;
+	top: 65%;
+	left: 29%;
+	z-index: 3;
+	-webkit-transition: transform 1s; /* Safari */
+    transition: transform 1s;
+    visibility: hidden;
+}
+
+#hand_cursor{
+	position: absolute;
+	top:52%;
+	left: 32%;
+	visibility: hidden;
+}
+
+#hand_cursor1{
+	position: absolute;
+	top: 56%;
+	left: 44%;
+	visibility: hidden;
+}
+
+#grey_solution{
+	position: absolute;
+	margin-bottom: 14.1%;
+	margin-left: 37.4%;
+	width: 4.6%;
+	height: 1%;
+	bottom: 0;
+	opacity: 1;
+	z-index: 2;
+	visibility: hidden;
+}
+
+#micro_wave{
+	position: absolute;
+	top:58%;
+	left:61%;
+	width:16%;
+	cursor: pointer;
+}
+
+#mw_openwindow{
+	position: absolute;
+	top:64%;
+	left:75%;
+	width:12%;
+	z-index: 1;
+	visibility: hidden;
+}
+
+#mw_closewindow{
+	position: absolute;
+	top: 64%;
+	left: 63%;
+	width: 12%;
+	z-index: 4;
+	visibility: hidden;
+}
+
+#water_bath{
+	position: absolute;
+	top: 52%;
+	left: 57%;
+	width: 27%;
+	cursor: pointer;
+	height: 31%;
+	visibility: hidden;
+}
+
+#clock{
+	position: absolute;
+	top: 25%;
+	left: 17%;
+	width: 26%;
+	visibility: hidden;
+}
+
+#clockhand{
+	position: absolute;
+	top: 30%;
+	left: 29%;
+	width: 1.4%;
+	-webkit-transition: transform 5s; /* Safari */
+    transition: transform 5s;
+    visibility: hidden;
+}
+
+#blue_arrow{
+	position: absolute;
+	top: 33.5%;
+	left: 41.5%;
+	z-index: 5;
+	visibility: hidden;
+}
+
+#blue_arrow_1{
+	position: absolute;
+	top: 43.5%;
+	left: 42.5%;
+	z-index: 5;
+	visibility: hidden;
+}
+
+#measurement_meter1{
+	position: absolute;
+	top:38%;
+	left:24.6%;
+	width:17%;
+	height:29%;
+	visibility: hidden;
+}
+
+#meter_scale_1{
+	position: absolute;
+	top:51%;
+	left:29%;
+	height:15%;
+	width: 0.5%;
+	bottom: 0;
+	visibility: hidden;
+}
+
+#meter_scale_2{
+	position: absolute;
+	top: 48%;
+	left: 29%;
+	height: 18%;
+	width: 0.5%;
+	bottom: 0;
+	visibility: hidden;
+}
+
+#measurement_meter3{
+	position: absolute;
+	top: 32%;
+	left: 45%;
+	width: 24%;
+	visibility: hidden;
+}
+
+#meter_scale_3{
+	position: absolute;
+	margin-bottom: 21.9%;
+	margin-left: 49.2%;
+	height: 6%;
+	width: 0.5%;
+	bottom: 0;
+	visibility: hidden;
+}
+
+#meter_scale_4, #meter_scale_5{
+	position: absolute;
+	margin-bottom: 22.5%;
+	margin-left: 49.2%;
+	height: 6%;
+	width: 0.5%;
+	bottom: 0;
+	visibility: hidden;
+}
+
+#temp60{
+	position: absolute;
+	top:54%;
+	left:47%;
+	width:5%;
+	visibility: hidden;
+}
+
+
+#temp_reading2{
+	position: absolute;
+	top: 39%;
+	left:47%;
+	width: 22%;
+	visibility: hidden;
+}
+
+#instruction_box2{
+	position: absolute;
+	top: 28%;
+	left: 36.7%;
+	visibility: hidden;
+}
+
+#dotted_line{
+	position: absolute;
+	top: 69%;
+	left: 36%;
+	width: 13%;
+	z-index: 5;
+	visibility: hidden;
+}
+
+#restart{
+	position: absolute;
+	top: 58%;
+	left: 18%;
+	cursor: pointer;
+	visibility: hidden;
+}
+
+#microwave_readings{
+	position: absolute;
+	top: 63%;
+	left: 59.9%;
+	width: 27%;
+	color: yellow;
+	font-weight: bold;
+	font-size: 125%;
+	visibility: hidden;
+}
+
+#final_instruction{
+	position: absolute;
+	top: 76%;
+	left: 40%;
+	font-weight: bold;
+	font-size: 130%;
+	visibility: hidden;
+}
+
+#instruction{
+	position: absolute;
+	top: 86%;
+	left: 15%;
+	font-weight: bold;
+	color: brown;
+	max-width: 72%;
+	max-height: 65%;
+	overflow: auto;
+}
+
