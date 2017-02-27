@@ -1,0 +1,185 @@
+body{
+    margin: 0 auto;
+    padding: 0;
+    overflow: hidden;
+ }
+
+.container{
+    width:1080px; 
+    height:715px; 
+    position: relative;
+}
+
+h4{  
+    text-align: center;
+    font-weight: bold;
+    font-family: "Times New Roman", Times, serif;
+}
+
+#shelf{
+    margin: auto;
+    display: block;
+    width: 57%;
+}
+
+#beaker_btn{
+    position: absolute;
+    width: 1.5%;
+    height: 28%;
+    top: 49.5%;
+    left: 40.4%;
+    cursor: pointer;
+}
+
+#talcum_btn{
+    position: absolute;
+    width: 1.5%;
+    height: 29.2%;
+    top: 48.5%;
+    left: 48.5%;
+    cursor: pointer;
+}
+
+#needle_btn{
+    position: absolute;
+    width: 2.5%;
+    height: 29.2%;
+    top: 48.5%;
+    left: 55.8%;
+    cursor: pointer;
+}
+
+#detergent_btn{
+    position: absolute;
+    width: 2.5%;
+    height: 29.2%;
+    top: 49.5%;
+    left: 63%;
+    cursor: pointer;
+}
+
+#apparatus_menu{
+    position: absolute;
+    width: 2%;
+    height: 26.2%;
+    top: 83.5%;
+    left: 35.5%;
+    cursor: pointer;
+}
+
+ul#apparatus_menu li {
+    display: inline;
+}
+
+ul li:hover {
+    color: darkgreen;
+}
+
+#microscopic_analysis{
+    position: absolute;
+    left: 45%;
+    top: 135%;
+    font-size: 139%;
+    font-family: "Times New Roman", Times, serif;
+    cursor: pointer;
+    visibility: hidden;
+}
+
+#microscopic_analysis:hover {
+    text-decoration: underline;
+    color: #006400;
+}
+
+#reset{
+    position: absolute;
+    left: 45%;
+    top: 155%;
+    font-size: 139%;
+    font-family: "Times New Roman", Times, serif;
+    cursor: pointer;
+    visibility: hidden;
+}
+
+#reset:hover {
+    text-decoration: underline;
+    color: darkgreen;
+}
+
+#talcum_powder{
+    position: absolute;
+    top: 21%;
+    left: 26%;
+    width: 2%;
+    visibility: hidden;
+    -webkit-transition: transform 1.5s; /* Safari */
+    transition: transform 1.5s;
+}
+
+#beaker{
+    position: absolute;
+    top: -11%;
+    left: 45%;
+    visibility: hidden;
+    -webkit-transition: transform 1s; /* Safari */
+    transition: transform 1s;
+}
+
+#drop1{
+    position: absolute;
+    top: -49%;
+    left: 54.8%;
+    width: 1.5%;
+    visibility: hidden;
+    -webkit-transition: transform 1.5s; /* Safari */
+    transition: transform 1.5s;
+}
+
+#drop2{
+    position: absolute;
+    top: 18.2%;
+    left: 57.1%;
+    width: 1%;
+    visibility: hidden;
+    -webkit-transition: transform 1.5s; /* Safari */
+    transition: transform 1.5s;
+}
+
+#detergent{
+    position: absolute;
+    top: 13%;
+    left: 69%;
+    width: 5%;
+    visibility: hidden;
+    -webkit-transition: transform 1.5s; /* Safari */
+    transition: transform 1.5s;
+}
+
+#needle{
+    position: absolute;
+    top: 20%;
+    left: 28%;
+    width:3%;
+    visibility: hidden;
+    -webkit-transition: transform 1.5s; /* Safari */
+    transition: transform 1.5s;
+}
+
+#table{
+    margin: auto;
+    display: block;
+    width: 81%;
+}
+
+#instruction{  
+    text-align: center;
+    font-size: 107%;    
+    font-family: "Times New Roman", Times, serif;
+    text-transform: uppercase;
+    color: black;
+}
+
+#reset_btn{
+    margin: auto;
+    display: block;
+    cursor: pointer;
+}

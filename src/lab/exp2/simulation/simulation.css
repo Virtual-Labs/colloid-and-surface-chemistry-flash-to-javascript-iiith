@@ -215,7 +215,6 @@ h3{
 	top: 52%;
 	left: 57%;
 	width: 27%;
-	cursor: pointer;
 	height: 31%;
 	visibility: hidden;
 }
@@ -337,7 +336,7 @@ h3{
 
 #dotted_line{
 	position: absolute;
-	top: 69%;
+	top: 71%;
 	left: 36%;
 	width: 13%;
 	z-index: 5;
@@ -350,6 +349,10 @@ h3{
 	left: 18%;
 	cursor: pointer;
 	visibility: hidden;
+}
+
+#restart:hover{
+	background-color: yellow;
 }
 
 #microwave_readings{

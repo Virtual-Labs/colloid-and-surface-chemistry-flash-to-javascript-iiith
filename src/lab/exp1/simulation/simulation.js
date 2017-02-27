@@ -25,6 +25,9 @@ var model={
 
 var view={
 
+  /* Click counts on elements. Here the clickcount represents the number of clicks on element. On specific 
+  click, specific instructions are executed. Initial click will be considered as zero and then so on the
+  click count is incremented to execute the instructions as per the count of the click on elements. */
   heaterClkcount:0,
   pipetteClkcount:0,
   flaskClkcount:0,
@@ -146,37 +149,6 @@ var view={
   // init: Calls method to set the instructions when, the page loads.
   init: function() {
     this.setInnerHTML('instruction', model.instruction1);
-    this.hideElements('arrow_powder');
-    this.hideElements('powder');
-    this.hideElements('watertag');
-    this.hideElements('instructiontag');
-    this.hideElements('instructiontag1');
-    this.hideElements('arrow_glassrod');
-    this.hideElements('spoon');
-    this.hideElements('red_powder');
-    this.hideElements('glassrod');
-    this.hideElements('arrow_flask');
-    this.hideElements('conical_flask');
-    this.hideElements('solution_name1');
-    this.hideElements('arrow_bead');
-    this.hideElements('magnetic_bead');
-    this.hideElements('arrow_heater');
-    this.hideElements('arrow_stirrer');
-    this.hideElements('power_btn');
-    this.hideElements('arrow_pipette');
-    this.hideElements('pipette');
-    this.hideElements('drop');
-    this.hideElements('arrow_pipette1');
-    this.hideElements('arrow_pipette2');
-    this.hideElements('solution_name2');
-    this.hideElements('flask');
-    this.hideElements('grey_solution');
-    this.hideElements('red_solution');
-    this.hideElements('stir_sol');
-    this.hideElements('water_boil');
-    this.hideElements('heater_btn');
-    this.hideElements('stirrer_btn');
-    this.hideElements('micro_analysis');
   },
 
   // resetPage: Calls method to reset the page.
@@ -184,8 +156,9 @@ var view={
     location.reload();
   },
 
-  // moveBeaker: Calls method to move the beaker on to the table and then, the flask moves upwards and pours 
-  // the solution into the beaker.
+  /* moveBeaker: Calls method to move the beaker on to the table.
+  Here the flask moves upwards and pours the solution into the beaker and then the flask moves to the left. 
+  Then a powder image with an arrow is made visible */
   moveBeaker: function() {
     this.removeClickEvent('beaker');
     this.hideElements('arrow_beaker');
@@ -209,7 +182,7 @@ var view={
     setTimeout(function(){
         view.showElements('watertag');
         view.animateElements('watertag', '-=20', '+=0');
-        view.rotateElements('flask', -80);
+        view.rotateElements('flask', '-80');
         view.animateElements('flask', '+=0', '-=60');
     }, 4000);
 
@@ -221,8 +194,9 @@ var view={
     }, 5500);
   },
 
-  // addPowder: Calls method to add fecl3 powder into the beaker. Here when, the powder image is clicked, 
-  // the spoon with a solution adds powder into the beaker containing solution.
+  /* addPowder: Calls method to add fecl3 powder into the beaker. Here when,the powder image is clicked, 
+  arrow is made hidden and the spoon with a solution adds powder into the beaker containing solution and 
+  gets hidden.Then a stirrer with an arrow is made visible. */
   addPowder: function() {
     this.removeClickEvent('powder');
     this.hideElements('arrow_powder');
@@ -232,7 +206,7 @@ var view={
     this.animateElements('instructiontag1', '+=0', '-=5');
 
     setTimeout(function(){
-        view.rotateElements('spoon', -20);
+        view.rotateElements('spoon', '-20');
         view.animateElements('red_powder', '+=35', '+=0');
     },1500);
 
@@ -251,8 +225,9 @@ var view={
     }, 3000);
   },
 
-  // moveGlassrod: Calls method to stir the solution in the beaker. Here when, the glassrod is clicked it is 
-  // replaced with a 'glassrod stirring image'. 
+  /* moveGlassrod: Calls method to stir the solution in the beaker. Here when, the glassrod is clicked it is 
+  replaced with a 'glassrod stirring image' and a arrow is made hidden. After a few seconds the 'glass rod 
+  stirring image' gets hidden and beaker moves to the left. Then an arrow with a conical_flask is made visible.*/
   moveGlassrod: function(){
     this.hideElements('arrow_glassrod');
     this.hideElements('glassrod');
@@ -273,7 +248,9 @@ var view={
     }, 5000);
   },
 
-  // moveFlask: Calls method to move the flask on to the stirrer & Heater instrument.
+  /* moveFlask: For the first click, calls this method to move the flask on to the stirrer & Heater instrument. 
+  Then an arrow with magnetic bead image is made visible. 
+  For the second click colloid of solution is shown. */
   moveFlask: function() {
     if(this.flaskClkcount == 0){
         this.removeClickEvent('conical_flask');
@@ -292,7 +269,8 @@ var view={
     
   },
 
-  // moveBead: Calls method to move the magnetic bead into the conical_flask.
+  /* moveBead: Calls method to move the magnetic bead into the conical_flask. Then an heater arrow is made 
+  visible. */
   moveBead: function() {
     this.removeClickEvent('magnetic_bead');
     this.hideElements('arrow_bead');
@@ -308,10 +286,12 @@ var view={
     }, 2000);
   },
 
-  // turnHeater: Calls method to switch on the heater button. Here the clickcount represents the number of
-  // clicks on element. On specific click, specific instructions are executed.
+  /*turnHeater: 
+  Calls this method to switch on the heater button.
+  For the first click, stirrer arrow and power button is made visible.
+  On second click heater arrow and water boiling image are made hidden. Then the beaker moves to the right 
+  and an arrow with pipette is made visible. */
   turnHeater: function() {
-    // var heaterClkcount = 0;
     if(this.heaterClkcount == 0){
       this.hideElements('heater_btn');
       this.hideElements('arrow_heater');
@@ -339,8 +319,9 @@ var view={
     }
   },
 
-  // turnStirrer: Calls method to switch on the heater_btn once, the water gets boils.
-  // Here the magnetic bead is replaced with a rotating magnetic bead.
+  /* turnStirrer: Calls method to switch on the stirrer button.On click, magnetic bead is replaced with a 
+  rotating magnetic bead. Then after few seconds water boiling image, arrow with an heater button is made 
+  visible. */
   turnStirrer: function() {
     this.hideElements('stirrer_btn');
     this.hideElements('arrow_stirrer');
@@ -354,12 +335,13 @@ var view={
     }, 2000);
   },
 
-  // movePipette: Calls method to move the pipette into the beaker, to extract the solution and drop
-  // that solution into the conical flask. On dropping the solution, solution color inside the flask 
-  // gets changed. Here the clickcount represents the number of clicks on element. On specific click, 
-  // specific instructions are executed.
+  /* movePipette:
+  For the first click, pipette moves down into the beaker. Then the solution in the beaker gets decreased 
+  and the pipette moves upwards and pipette arrow is made visible.
+  For the second click, pipette moves towards right and arrow, drop image is made visible.
+  For the third click, drop moves down into the flask and the flask gets replaced. Then a solution name 2 is 
+  made visible. */
   movePipette: function() {
-    // var pipetteClkcount =0;
     if(this.pipetteClkcount == 0){
         this.removeClickEvent('pipette');
         this.hideElements('arrow_pipette');
@@ -405,6 +387,7 @@ var view={
     }
   },
 
+  // showSolution: On cliking, the flask/solution_name2 colloid of solution is shown.
   showSolution: function() {
       this.removeClickEvent('solution_name2');
       this.removeClickEvent('conical_flask');
@@ -413,12 +396,11 @@ var view={
             view.loadPage('final_solution', model.htmlpages[0]);
             view.setInnerHTML('instruction', model.instruction13);
       }, 200);
-      // this.loadPage('micro_analysis', model.htmlpages[1]);
   }
 
 }
 
-// onload function: call init method on window onload.
+// onload function: Call init method on window onload.
 window.onload=function() {
   view.init();
   view.activateEvents();

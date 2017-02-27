@@ -49,18 +49,21 @@ h3{
 	position: absolute;
 	top: -125%;
 	left: 20%;
+	visibility: hidden;
 }
 
 #arrow_pipette1{
 	position: absolute;
 	top: -133%;
 	left: 51%;
+	visibility: hidden;
 }
 
 #arrow_pipette2{
 	position: absolute;
 	top: -133%;
 	left: 17%;
+	visibility: hidden;
 }
 
 #pipette{
@@ -68,6 +71,7 @@ h3{
 	top: -140%;
 	left: 43%;
 	cursor: pointer;
+	visibility: hidden;
 }
 
 #drop{
@@ -76,12 +80,14 @@ h3{
 	left: 66.3%;
 	width: 0.5%;
 	z-index: 3;
+	visibility: hidden;
 }
 
 #arrow_flask{
 	position: absolute;
 	top: -137%;
 	left: 31%;
+	visibility: hidden;
 }
 
 #conical_flask{
@@ -89,12 +95,14 @@ h3{
 	top: -137%;
 	left: 64.5%;
 	cursor: pointer;
+	visibility: hidden;
 }
 
 #arrow_bead{
 	position: absolute;
 	top: -137%;
 	left: 38%;
+	visibility: hidden;
 }
 
 #magnetic_bead{
@@ -103,6 +111,7 @@ h3{
 	left: 66%;
 	width: 1.6%;
 	cursor: pointer;
+	visibility: hidden;
 }
 
 #powder{
@@ -110,6 +119,7 @@ h3{
 	top: -141%;
 	left: 46%;
 	cursor: pointer;
+	visibility: hidden;
 }
 
 #arrow_powder{
@@ -117,6 +127,7 @@ h3{
 	top: -136%;
 	left: 24%;
 	width: 23%;
+	visibility: hidden;
 }
 
 #arrow_glassrod{
@@ -124,18 +135,21 @@ h3{
 	top: -95%;
 	left: 16%;
 	width: 25%;
+	visibility: hidden;
 }
 
 #instructiontag{
 	position: absolute;
 	top: -90%;
 	left: 16%;
+	visibility: hidden;
 }
 
 #instructiontag1{
 	position: absolute;
 	top: -86%;
 	left: 54%;
+	visibility: hidden;
 }
 
 #spoon{
@@ -143,6 +157,7 @@ h3{
 	top: -59%;
 	left: 41%;
 	width: 6%;
+	visibility: hidden;
 }
 
 #red_powder{
@@ -150,6 +165,7 @@ h3{
 	top: -51%;
 	left: 41.5%;
 	width: 1.8%;
+	visibility: hidden;
 }
 
 #glassrod{
@@ -159,6 +175,7 @@ h3{
 	width: 4%;
 	height: 62%;
 	cursor: pointer;
+	visibility: hidden;
 }
 
 #watertag{
@@ -166,6 +183,7 @@ h3{
 	top: -5%;
 	left: 38%;
 	z-index: 1;
+	visibility: hidden;
 }
 
 #arrow_heater{
@@ -173,6 +191,7 @@ h3{
 	top: -121%;
 	left: 61%;
 	z-index: 2;
+	visibility: hidden;
 }
 
 #arrow_stirrer{
@@ -180,6 +199,7 @@ h3{
 	top: -115%;
 	left: 59.5%;
 	z-index: 2;
+	visibility: hidden;
 }
 
 #heater{
@@ -195,6 +215,7 @@ h3{
 	width: 1.5%;
 	height: 10%;
 	cursor: pointer;
+	visibility: hidden;
 }
 
 #stirrer_btn{
@@ -204,6 +225,7 @@ h3{
 	width: 1.5%;
 	height: 10%;
 	cursor: pointer;
+	visibility: hidden;
 }
 
 #power_btn{
@@ -213,6 +235,7 @@ h3{
 	width: 0.5%;
 	height: 3%;
 	background-color: #FF0000;
+	visibility: hidden;
 }
 
 #grey_solution{
@@ -222,6 +245,7 @@ h3{
 	width: 4.1%;
 	height: 1%;
 	bottom: 0;
+	visibility: hidden;
 }
 
 #red_solution{
@@ -233,6 +257,7 @@ h3{
 	bottom: 0;
 	border-bottom-right-radius: 2em;
 	border-bottom-left-radius: 2em; 
+	visibility: hidden;
 }
 
 #flask{
@@ -241,12 +266,14 @@ h3{
 	left: 19%;
 	-webkit-transition: transform 1s; /* Safari */
     transition: transform 1s;
+    visibility: hidden;
 }
 
 #stir_sol{
 	position: absolute;
 	top: -56%;
 	left: 36%;
+	visibility: hidden;
 }
 
 #water_boil{
@@ -255,6 +282,7 @@ h3{
 	left: 65%;
 	width: 4.5%;
 	z-index: 2;
+	visibility: hidden;
 }
 
 #solution_name1{
@@ -263,6 +291,7 @@ h3{
 	left: 18%;
 	color: #800000;
 	font-size: 125%;
+	visibility: hidden;
 }
 
 #solution_name2{
@@ -272,6 +301,7 @@ h3{
 	color: #800000;
 	font-size: 125%;
 	cursor: pointer;
+	visibility: hidden;
 }
 
 #final_solution{
@@ -286,6 +316,7 @@ h3{
 	top: -128%;
 	left: 38%;
 	z-index: 2;
+	visibility: hidden;
 }
 
 #table{

@@ -10,15 +10,15 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
   <!-- Latest compiled JavaScript -->
   <script src="../../libraries/bootstrap-3.3.7-dist/css/bootstrap.min.js"></script>
-  <link rel="stylesheet" type="text/css" href="expt1.css"> 
-  <script type="text/javascript" src="expt1.js"></script>
+  <link rel="stylesheet" type="text/css" href="simulation.css"> 
+  <script type="text/javascript" src="simulation.js"></script>
 </head>
 
 <body>
   <div class="container"> <!-- start of the container -->
 
-      <!--First row consists of title of the experiment and instruction box image where, 
-      the instructions to perform the experiment will be displayed in the div.-->
+      <!-- First row consists of title of the experiment, instruction box image and a div (where, 
+      the instructions to perform the experiment will be displayed). -->
   		<div class="row">
         		<div class="col-sm-12">
            		    <h3>Preparation of Sols</h3>
@@ -28,8 +28,9 @@
       </div><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
       <!-- end of the first row -->
 
-      <!--second row consists of images( instruments to perform the experiment ). Initially all 
-      the images are hidden except the beaker image.-->
+      <!--second row consists of table with magnetic stirrer & heater instrument, images( instruments to 
+      perform the experiment ) and the reset button to reload the page. Initially all the images are hidden 
+      except the beaker image. -->
       <div class="row" >
             <div class="col-sm-12">
                   <img id="beaker" src="images/beaker.png">
@@ -66,12 +67,12 @@
                   <p id="solution_name1"> Conc. FeCl<sub>3</sub> </p>
                   <p id="solution_name2"> Fe(OH)<sub>3</sub>  colloid</p>
                   <div id="final_solution"></div>
-                  <!-- <div id="micro_analysis"></div> -->
                   <img id="micro_analysis" src="images/morph.png">
                   <img id="table" src="images/table.png">
                   <button id="reset">Reset Experiment</button>
             </div>
-      </div> <!-- end of the second row -->
+      </div> 
+      <!-- end of the second row -->
 
   </div> <!-- end of the container -->
 </body>

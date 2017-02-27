@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <title>Surface Tension</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Stylesheet of the experiment -->
+  <link rel="stylesheet" type="text/css" href="simulation.css">
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="../../libraries/bootstrap-3.3.7-dist/css/bootstrap.min.css">
+  <!-- jQuery library -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <!-- Latest compiled JavaScript -->
+  <script src="../../libraries/bootstrap-3.3.7-dist/css/bootstrap.min.js"></script>
+  <script type="text/javascript" src="simulation.js"></script>
+  <script type = "text/javascript" src = "https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.3/jquery-ui.min.js"></script>
+  
+</head>
+
+<!-- body is divided into two rows -->
+<body>
+  <div class='container'>  <!-- Start of the container -->
+
+    <!-- First row consists of title of the experiment, a shelf with tranparent images placed
+    on top of it, list of apparatus names, div with microscopic_analysis and a div with reset.-->
+    <div class='row'>  
+      <div class='col-sm-12'>
+          <h4>Surface Tension and its modification</h4><br/>
+          <img id='shelf' src='images/shelf.png'>
+          <img id='beaker_btn' src='images/transparent_button.png'>
+          <img id='talcum_btn' src='images/transparent_button.png'>
+          <img id='needle_btn' src='images/transparent_button.png'>
+          <img id='detergent_btn' src='images/transparent_button.png'>
+          <div>
+              <ul id='apparatus_menu'>
+                <li>BEAKER</li>
+                <li>TALCUM POWDER</li>
+                <li>NEEDLE</li>
+                <li>DETERGENT</li>
+              </ul>  
+          </div>
+          <div id="microscopic_analysis">Click here to see microscopic analysis.</div><br/>
+          <div id='reset'>Reset!</div>
+      </div>
+    </div><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+    <!-- end of the first row -->
+
+    <!-- Second row has table image, div to display the instructions and a reset button to refresh the page. On top of the table, experiment related images are placed(initially all the images are made hidden). -->
+    <div class='row' >
+      <div class='col-sm-12' >
+          <img id='talcum_powder' src='images/talcum_powder.png'>
+          <img id='beaker' src='images/beaker1.png'>
+          <img id='drop1' src='images/drop1.png'>
+          <img id='drop2' src='images/drop1.png'>
+          <img id='detergent' src='images/detergent.png'>
+          <img id='needle' src='images/needle.png'>
+          <img id= 'table' src='images/table.png'><br/>
+          <div id='instruction'></div><br/><br/>
+          <button id="reset_btn">Reset Experiment</button>
+      </div>
+    </div>
+    <!-- end of the second row -->
+
+  </div> <!-- end of the container -->
+</body>
+
+</html>

@@ -39,8 +39,9 @@ var model={
 
 var view ={
 	
-	// Click counts on elements. Initial click will be considered as zero and then so on the
-	// click count is incremented to perform the instructions as per the count of the click.
+	/* Click counts on elements. Here the clickcount represents the number of clicks on element. On specific 
+  	click, specific instructions are executed. Initial click will be considered as zero and then so on the
+  	click count is incremented to execute the instructions as per the count of the click on elements. */
 	beakercount: 0,
 	watchglass_count: 0,
 	thermometer_count: 0,
@@ -106,8 +107,8 @@ var view ={
 		});
 	},
 
-	// animateDirection_3: Calls this method to move the element in a straight line along with the width 
-	// and height of the element increasing/decreasing. 
+	/* animateDirection_3: Calls this method to move the element in a straight line along with the width 
+	and height of the element increasing/decreasing. */
 	animateDirection_3: function(id, top, left, width, height){
 		$('#'+id).animate({
 			top: top+'%',
@@ -144,6 +145,11 @@ var view ={
 		 $( id).effect( "shake" );
 	},
 
+	// fadeElements: Calls this method to make an element fade in and fade out for every few seconds. 
+	fadeElements: function(id){
+		$('#'+id).fadeIn().fadeOut();
+	},
+
 	// rotateElements: Calls this method to make an element rotate for a given deg.
   	rotateElements: function(id, deg) {
 	    // Code for Safari
@@ -167,8 +173,8 @@ var view ={
 	    }, 200);
 	},
 
-	// activateEvents: Calls this method to add EventListener to an elements at once. When an element is 
-	// clicked corresponding function gets executed.
+	/* activateEvents: Calls this method to add EventListener to an elements. When an element is 
+	clicked corresponding function gets executed. */
 	activateEvents: function() {
 		this.addClickEvent('reset_btn', function() { view.resetPage(); });
 		this.addClickEvent('restart', function() { view.resetPage(); });
@@ -182,10 +188,10 @@ var view ={
 		this.addClickEvent('gel_mold', function() { view.moveGelmold(); });
 	},
 
-	// initialInstructions: Calls this method to execute the following methods, when the page loads.
-	// This method displays the first instruction to be performed and initially disables the
-	// click events for all the elements except for the beaker as, the click events should be 
-	// performed in an order.
+	/* initialInstructions: Calls this method to execute the following methods, when the page loads.
+	This method displays the first set of instructions to be performed and initially disables the
+	click events for all the elements except for the beaker as, the click events should be 
+	performed in an order. */
 	initialInstructions: function(){
 		this.setInnerHTML('instruction', model.instruction1);
 		this.removeClickEvent('agarose_sol');
@@ -196,11 +202,6 @@ var view ={
 		this.removeClickEvent('thermometer');
 		this.removeClickEvent('micro_wave');
 	},
-
-	// fadeElements: Calls this method to make an element fade in and fade out for every few seconds. 
-	fadeElements: function(id){
-		$('#'+id).fadeIn().fadeOut();
-	},
 	
 	// resetPage: Calls this method to reset the page on clicking the button.
 	resetPage: function(){
@@ -208,25 +209,26 @@ var view ={
 	},
 
 	// moveBeaker: 
-	/* For the click zero calls this method to move the beaker on to the table for the first click.
+	/* For the click count zero calls this method to move the beaker on to the table for the first click.
 	When this method is called for any click, click event for the beaker is disabled and then
 	click for the next element is enabled.*/
 
-	/* For the first click, click event is disabled for the beaker and moves the beaker into the microwave.
+	/* For the click count one, click event is disabled for the beaker and moves the beaker into the microwave.
 	Here the beaker, grey_solution, watch_glass are animated to move them inside the microwave. Here 
 	the microwave gets replaced with open_microwave image and the open window of the microwave is made
 	visible. Then the open micro wave window is made hidden and the close micro wave window is made visible.
 	Now the click event is enabled for the microwave. */
 
-	/* For the second click, click event is disabled for the beaker first. Then the beaker gets rotated and the
-	image of the beaker and the gel mold gets replaced. Now, click event for the thermometer is enabled. */
+	/* For the click count two, click event is disabled for the beaker first. Then the beaker gets rotated and 
+	the image of the beaker and the gel mold gets replaced. Now, click event for the thermometer is enabled. */
 
-	/* For the third click, click event is disabled for the beaker first. On click hand cursor gets hidden
+	/* For the click count three, click event is disabled for the beaker first. On click hand cursor gets hidden
 	and the beaker, hand moves up and gets rotated. Then after few seconds they are moved down and the 
 	hand image gets hidden .Now, click event for the thermometer is enabled. */
 
 	/* For the other clicks, click event is disabled for the beaker first. Then the beaker is placed in
-	water bath for every few seconds. */
+	water bath for every few seconds. Readings on measurement meter and microwave are shown for every 
+	insertion.*/
 
 	moveBeaker: function(){
 		if(this.beakercount == 0){
@@ -241,7 +243,7 @@ var view ={
 			if(!$('#watch_glass').is(':animated')){
 				this.removeClickEvent('beaker');
 				this.animateDirection_3('beaker', '+=2', '+=30', '-=0.8', '-=2');
-				this.animateDirection_3('grey_solution', '+=2', '+=30', '-=0.7', '-=2');
+				// this.animateDirection_3('grey_solution', '+=2', '+=30', '-=0.7', '-=2');
 				this.animateDirection_3('watch_glass', '+=2', '+=30', '-=0.8', '-=0');
 				this.replaceElements('micro_wave', 'images/open_microwave.png');
 				this.showElements('mw_openwindow');
@@ -282,13 +284,8 @@ var view ={
 
 				setTimeout(function() {
 					view.rotateElements('beaker', '20');
-					view.rotateElements('hand', '16');
+					view.rotateElements('hand', '20');
 				}, 1000);
-
-				setTimeout(function() {
-					view.rotateElements('beaker', '-20');
-					view.rotateElements('hand', '-16');
-				}, 2000);
 
 				setTimeout(function() {
 					view.rotateElements('beaker', '0');
@@ -325,14 +322,6 @@ var view ={
 				view.showElements('measurement_meter3');
 				view.showElements('meter_scale_3');
 				view.animateHeight('meter_scale_3', '26');
-				// setInterval(function(){
-				// 		value= document.getElementById('microwave_readings').innerHTML;
-				// 		value++;
-				// 		alert(value);
-				// 		// if(value == 85){
-				// 		// 	clearInterval();
-				// 		// }
-				// }, 10);
 			}, 6000);
 
 			setTimeout(function() {
@@ -399,6 +388,17 @@ var view ={
 				view.animateDirection_1('beaker', '+=25', '+=0');
 				view.animateDirection_1('thermometer', '+=25', '+=0');
 			}, 2000);
+
+			setTimeout(function() {
+				var timer= setInterval(function(){
+						var readings= parseInt(document.getElementById('microwave_readings').innerHTML);
+					    readings++;
+					    document.getElementById('microwave_readings').innerHTML = readings;
+					    if(readings == 85){
+					    	clearInterval(timer);
+					    }	
+				}, 50);
+			}, 3000);
 
 			setTimeout(function() {
 				view.showElements('measurement_meter3');
@@ -470,6 +470,17 @@ var view ={
 			}, 2000);
 
 			setTimeout(function() {
+				var timer= setInterval(function(){
+						var readings= parseInt(document.getElementById('microwave_readings').innerHTML);
+					    readings++;
+					    document.getElementById('microwave_readings').innerHTML = readings;
+					    if(readings == 90){
+					    	clearInterval(timer);
+					    }	
+				}, 100);
+			}, 3000);
+
+			setTimeout(function() {
 				view.showElements('measurement_meter3');
 				view.replaceElements('measurement_meter3', model.images[16]);
 				view.showElements('meter_scale_5');
@@ -500,37 +511,37 @@ var view ={
 			setTimeout(function() {
 				view.showElements('dotted_line');
 				view.showElements('final_instruction');
-			}, 10000);
+			}, 11000);
 
 			setTimeout(function() {
 				view.showElements('hand');
-				view.animateDirection_1('hand', '-=12', '+=0');
+				view.animateDirection_1('hand', '-=14', '+=0');
 				view.animateDirection_1('beaker', '-=8', '+=0');
 				view.animateDirection_1('thermometer', '-=8', '+=0');
-				view.animateDirection_1('dotted_line', '-=6.5', '+=0');
-			}, 12000);
+				view.animateDirection_1('dotted_line', '-=7.5', '+=0');
+			}, 14000);
 
 			setTimeout(function() {
 				view.rotateElements('beaker', '25');
 				view.rotateElements('thermometer', '25');
 				view.rotateElements('hand', '25');
-			}, 14000);
+			}, 16000);
 
 			setTimeout(function() {
 				view.showElements('instruction_box2');
 				view.showElements('restart');
-			}, 16000);
+			}, 18000);
 
 		}
 
 	},
 
-	// Moves bottle: When this method is called, click is made disabled for the solution bottle 
-	// and then it is moved on to the table. Then the solution bottle is made hidden and the 
-	// open solution bottle and cap is made visible and the cap move downs. Then the spoon to 
-	// collect the solution is made visible and it is moved down into the bottle. Then an instruction 
-	// box and hand hand cursor are made visible showing to collect the solution from the bottle. Now the 
-	// click for the spoon element is enabled.
+	/* Moves bottle: When this method is called, click is made disabled for the solution bottle 
+	and then it is moved on to the table. Then the solution bottle is made hidden and the 
+	open solution bottle and cap is made visible and the cap move downs. Then the spoon to 
+	collect the solution is made visible and it is moved down into the bottle. Then an instruction 
+	box and hand hand cursor are made visible showing to collect the solution from the bottle. Now the 
+	click for the spoon element is enabled. */
 	movesolBottle: function(){
 		if(!$('#beaker').is(':animated')){
 			this.removeClickEvent('agarose_sol');
@@ -561,13 +572,13 @@ var view ={
 	},
 
 	
-	// moveSpoon: Calls method to add agarose solution from the bottle into the beaker.
-	// When this method is called, click is made disabled for the spoon and the hand cursor is 
-	// made hidden. Here the spoon gets replaced with spoon with a solution and then it moves near the 
-	// beaker by changing the spoon images. Then the beaker image gets replaced with a beaker with solution
-	// image. Then the  spoon and the instruction box gets hidden. Then the caps moves up. Then the open 
-	// solution bottle and the cap gets replaced by a agarose solution bottle and finally it moves back to 
-	// the shelf. Now the click is enabled for the buffer sol bottle.
+	/* moveSpoon: Calls method to add agarose solution from the bottle into the beaker.
+	When this method is called, click is made disabled for the spoon and the hand cursor is 
+	made hidden. Here the spoon gets replaced with spoon with a solution and then it moves near the 
+	beaker by changing the spoon images. Then the beaker image gets replaced with a beaker with solution
+	image. Then the  spoon and the instruction box gets hidden. Then the caps moves up. Then the open 
+	solution bottle and the cap gets replaced by a agarose solution bottle and finally it moves back to 
+	the shelf. Now the click is enabled for the buffer sol bottle. */
 
 	moveSpoon: function(){
 		this.removeClickEvent('spoon');	
@@ -600,13 +611,13 @@ var view ={
 		}, 5000);
 	},
 
-	// moveBuffer: Calls method to add buffer solution into the beaker and then moves back onto the shelf.
-	// When this method is called, click is made disabled for the buffer bottle and the buffer bottle moves 
-	// on to the table. The the buffer bottle is made hidden and the open buffer bottle and its cap are made 
-	// visible. The the buffer bottle moves up, rotates and pours the solution into the beaker and comes back 
-	// to its initial position. Then the buffer cap moves up near the bottle. Then the open buffer bottle, its 
-	// cap are made hidden and buffer solution bottle is made visible. Then finally buffer bottle moves back 
-	// to the shelf. Now the click is enabled for watch glass.
+	/* moveBuffer: Calls method to add buffer solution into the beaker and then moves back onto the shelf.
+	When this method is called, click is made disabled for the buffer bottle and the buffer bottle moves 
+	on to the table. The the buffer bottle is made hidden and the open buffer bottle and its cap are made 
+	visible. The the buffer bottle moves up, rotates and pours the solution into the beaker and comes back 
+	to its initial position. Then the buffer cap moves up near the bottle. Then the open buffer bottle, its 
+	cap are made hidden and buffer solution bottle is made visible. Then finally buffer bottle moves back 
+	to the shelf. Now the click is enabled for watch glass. */
 	moveBuffer: function(){
 	    if(!$('#agarose_sol').is(':animated')){
 			this.removeClickEvent('buffer_sol');
@@ -655,11 +666,11 @@ var view ={
 	},
 
 	/* moveWatchglass: 
-	Calls this method to cover the top of the beaker for the first click.when this method is called, 
+	For the click count zero, calls this method to cover the top of the beaker .when this method is called, 
 	click is made disabled for the watch glass and click is enabled for the beaker. Here the watch_glass 
 	is moved down to cover the top of the beaker. */
 
-	/* For the second click, click event for the watch_glass is disabled first. Then the beaker and watch_glass
+	/* For the click count one, click event for the watch_glass is disabled first. Then the beaker and watchglass
 	moves inside the microwave oven. Then after few seconds they are taken out of the microwave and the 
 	watch_glass is moved back to the shelf. Now the click event for the thermometer is enabled. */
  	moveWatchglass: function() {
@@ -669,8 +680,12 @@ var view ={
 				this.rotateElements('watch_glass', '5.7');
 				this.animateHeight('watch_glass', '2.5');
 				this.animateDirection_1('watch_glass', '+=56', '-=13.2');
-				this.enableClickEvent('beaker');
-				this.setInnerHTML('instruction', model.instruction5);
+				setTimeout(function(){
+					view.hideElements('grey_solution');
+					view.replaceElements('beaker',  model.images[5]);
+					view.enableClickEvent('beaker');
+					view.setInnerHTML('instruction', model.instruction5);
+				}, 2000);
 				this.watchglass_count++;
 			}
 		}
@@ -705,14 +720,14 @@ var view ={
 		}
 	},
 
-	// open microwave: Calls this method to move the beaker on to the table from the microwave.
-	// Here the when the method is called click event for the microwave is disabled first.
-	// Then the microwave close window is made hidden and microwave open window is made visible.
-	// Then the beaker, grey_solution, watch_glass moves on to the table. Then the hand image is 
-	// made visible to take the beaker up and swirl it. Then the hand, beaker, grey_solution,
-	// watch_glass moves up and the beaker gets shaked and then the beaker image gets replaced.
-	// Then all the elements moves down to its initial position. Now the click for the watch_glass 
-	// is enabled.
+	/* open microwave: Calls this method to move the beaker on to the table from the microwave.
+	Here the when the method is called click event for the microwave is disabled first.
+	Then the microwave close window is made hidden and microwave open window is made visible.
+	Then the beaker, grey_solution, watch_glass moves on to the table. Then the hand image is 
+	made visible to take the beaker up and swirl it. Then the hand, beaker, grey_solution,
+	watch_glass moves up and the beaker gets shaked and then the beaker image gets replaced.
+	Then all the elements moves down to its initial position. Now the click for the watch_glass 
+	is enabled. */
 
 	openMicrowave: function() {
 		if(!$('#beaker').is(':animated')){
@@ -723,7 +738,6 @@ var view ={
 				view.showElements('mw_openwindow');
 				view.replaceElements('micro_wave',  model.images[4]);
 				view.animateDirection_3('beaker', '-=2', '-=30', '+=0.8', '+=2');
-				view.animateDirection_3('grey_solution', '-=2', '-=30', '+=0.7', '+=2');
 				view.animateDirection_3('watch_glass', '-=2', '-=30', '+=0.8', '+=0');
 			}, 1000);
 			
@@ -736,7 +750,6 @@ var view ={
 			setTimeout(function() {
 				view.animateDirection_1('hand', '-=16', '+=0');
 				view.animateDirection_1('beaker', '-=16', '+=0');
-				view.animateDirection_1('grey_solution', '-=16', '+=0');
 				view.animateDirection_1('watch_glass', '-=16', '+=0');
 			}, 4000);
 
@@ -747,8 +760,6 @@ var view ={
 			}, 6000);
 
 			setTimeout(function() {	
-				view.hideElements('grey_solution');
-				view.replaceElements('beaker',  model.images[5]);
 				view.hideElements('circle');
 				view.animateDirection_1('hand', '+=16', '+=0');
 				view.animateDirection_1('beaker', '+=16', '+=0');
@@ -764,19 +775,19 @@ var view ={
 	},
 
 	//moveThermometer:
-	/* For the first click, calls this method to move the thermometer into the beaker.When the method is called,
-	click for the thermometer is disabled first. Here the once the thermometer moves down, a measurement meter
-	is made visible and the thermometer gets replaced and moves back to the shelf. Now the click event for the
-	gel mold is enabled. */
+	/* For the click count zero, calls this method to move the thermometer into the beaker.When the method is 
+	called,click for the thermometer is disabled first. Here the once the thermometer moves down, a measurement 
+	meter is made visible and the thermometer gets replaced and then moves back to the shelf. Now the click event for 
+	the gel mold is enabled. */
 
-	/* For the second click, calls this method to move the thermometer into the beaker.When the method is called,
-	click for the thermometer is disabled first. Here the once the thermometer moves down, a measurement meter
-	is made visible and the thermometer gets replaced and moves back to the shelf. Now the click event for the
-	beaker is enabled. */ 
+	/* For the click count one, calls this method to move the thermometer into the beaker.When the method is 
+	called, click for the thermometer is disabled first. Here the once the thermometer moves down, a measurement 
+	meter is made visible and the thermometer gets replaced and moves back to the shelf. Now the click event for 
+	the beaker is enabled. */ 
 
-	/* For the third click, calls this method to move the thermometer into the beaker. When the method is called,
-	click for the thermometer is disabled first. Here the once the thermometer moves down, thermometer gets 
-	replaced. Then the micro wave is made hidden and the water bath is made visible.Now the click event for 
+	/* For the click count two, calls this method to move the thermometer into the beaker. When the method is 
+	called, click for the thermometer is disabled first. Here the once the thermometer moves down, thermometer 
+	gets replaced. Then the micro wave is made hidden and the water bath is made visible.Now the click event for 
 	the beaker is enabled. */
 	moveThermometer: function() {
 		if(this.thermometer_count == 0){
@@ -791,7 +802,7 @@ var view ={
 				setTimeout(function() {
 					view.showElements('measurement_meter1');
 					view.showElements('meter_scale_1');
-					view.animatePadding('meter_scale_1', '+=7');
+					view.animatePadding('meter_scale_1', '+=6.8');
 				}, 2000);
 
 				setTimeout(function() {
@@ -862,7 +873,7 @@ var view ={
 			if(!$('#beaker').is(':animated')){
 				this.removeClickEvent('thermometer');
 				this.animateDirection_1('thermometer', '+=58', '-=35.2');
-				//this.replaceElements('thermometer', 'images/thermometer1.png');
+
 				setTimeout(function() {
 					view.replaceElements('thermometer', model.images[12]);
 					view.showElements('water_bath');
