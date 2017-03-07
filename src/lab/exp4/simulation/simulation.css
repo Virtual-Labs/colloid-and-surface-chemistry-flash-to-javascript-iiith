@@ -60,8 +60,6 @@ h4{
 
 #apparatus_menu{
     position: absolute;
-    width: 2%;
-    height: 26.2%;
     top: 83.5%;
     left: 35.5%;
     cursor: pointer;
@@ -75,17 +73,20 @@ ul li:hover {
     color: darkgreen;
 }
 
-#microscopic_analysis{
+#microscopic_analysis_link{
     position: absolute;
     left: 45%;
     top: 135%;
-    font-size: 139%;
+    letter-spacing: 2px;
+    font-size: 120%;
+    font-weight: bold;
     font-family: "Times New Roman", Times, serif;
+    text-transform: uppercase;
     cursor: pointer;
     visibility: hidden;
 }
 
-#microscopic_analysis:hover {
+#microscopic_analysis_link:hover {
     text-decoration: underline;
     color: #006400;
 }
@@ -94,8 +95,11 @@ ul li:hover {
     position: absolute;
     left: 45%;
     top: 155%;
-    font-size: 139%;
+    letter-spacing: 2px;
+    font-size: 120%;
+    font-weight: bold;
     font-family: "Times New Roman", Times, serif;
+    text-transform: uppercase;
     cursor: pointer;
     visibility: hidden;
 }
@@ -113,6 +117,23 @@ ul li:hover {
     visibility: hidden;
     -webkit-transition: transform 1.5s; /* Safari */
     transition: transform 1.5s;
+}
+
+#powder_particles_1{
+    position: absolute;
+    top: -32%;
+    left: 46%;
+    z-index: 5;
+    width: 10%;
+    visibility: hidden;
+}
+
+#powder_particles_2, #powder_particles_3{
+    position: absolute;
+    top: 8%;
+    left: 45.5%;
+    z-index: 5;
+    visibility: hidden;
 }
 
 #beaker{
@@ -136,9 +157,20 @@ ul li:hover {
 
 #drop2{
     position: absolute;
-    top: 18.2%;
-    left: 57.1%;
-    width: 1%;
+    top: -44.5%;
+    left: 58.2%;
+    width: 1.2%;
+    visibility: hidden;
+    -webkit-transition: transform 1.5s; /* Safari */
+    transition: transform 1.5s;
+}
+
+#drop3, #drop4,
+#drop5, #drop6, #drop7{
+    position: absolute;
+    top: -52%;
+    left: 54.5%;
+    width: 1.6%;
     visibility: hidden;
     -webkit-transition: transform 1.5s; /* Safari */
     transition: transform 1.5s;
@@ -156,12 +188,21 @@ ul li:hover {
 
 #needle{
     position: absolute;
-    top: 20%;
-    left: 28%;
-    width:3%;
+    top: -51%;
+    left: 22%;
+    width: 5%;
     visibility: hidden;
     -webkit-transition: transform 1.5s; /* Safari */
     transition: transform 1.5s;
+}
+
+#microscopic_analysis_1, 
+#microscopic_analysis_2{
+    position: absolute;
+    top: -67%;
+    left: 26%;
+    z-index: 6;
+    cursor: pointer;
 }
 
 #table{
