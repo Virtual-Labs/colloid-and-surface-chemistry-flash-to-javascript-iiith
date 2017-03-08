@@ -49,8 +49,10 @@ Another advantage of JavaScript is that the code to make an animation flutter ac
   Model View Controller:
   Model–view–controller (MVC) is a software design pattern for implementing user interfaces on computers. It divides a given application into three interconnected parts in order to separate internal representations of information from the ways that information is presented to and accepted from the user.[1][2] The MVC design pattern decouples these major components allowing for efficient code reuse and parallel development.
 
-  Model - The domain-specific representation of the information on which the application operates. The model is another name for the domain layer. Domain logic adds meaning to raw data (e.g., calculating if today is the user’s birthday, or the totals, taxes and shipping charges for shopping cart items).
+    Model - The domain-specific representation of the information on which the application operates. The model is another name for the domain layer. Domain logic adds meaning to raw data (e.g., calculating if today is the user’s birthday, or the totals, taxes and shipping charges for shopping cart items).
+  
   View - Renders the model into a form suitable for interaction, typically a user interface element. MVC is often seen in web applications, where the view is the HTML page and the code which gathers dynamic data for the page.
+  
   Controller - Processes and responds to events, typically user actions, and invokes changes on the model and perhaps the view.
 
 
